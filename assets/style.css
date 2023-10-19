@@ -1,0 +1,122 @@
+:root{
+    --main-bg-color: #5c5c5c;
+  }
+  * {
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  body {
+    display: grid;
+    grid-template-rows:
+      "header"
+      "main"
+      "footer";
+  }
+  /*----------------------------------------------------------------HEADER----------------------------------------------------------------*/
+  header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+  }
+  
+  .nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    flex: 1;
+  }
+  
+  .ranking {
+    display: flex;
+    flex-direction: row;
+    flex: 0 auto auto;
+    align-items: center;
+    margin-right: 10px;
+  }
+  .global {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+  }
+  .local {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }W
+
+  
+  /*----------------------------------------------------------------HEADER----------------------------------------------------------------*/
+  /*----------------------------------------------------------------MAIN----------------------------------------------------------------*/
+  main {
+    grid-row: "main";
+    display: flex;
+    flex-direction: column;
+    width: 63%;
+    height: 81.25vh;
+    margin: auto;
+    margin-top: 10px;
+    color: white;
+  }
+  
+  /*----------------------------------------------------------------MAIN----------------------------------------------------------------*/
+  /*----------------------------------------------------------------FOOTER----------------------------------------------------------------*/
+  footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--main-bg-color); 
+    color: rgb(241, 237, 255);
+    font-size: 18px;
+  }
+  
+  .social-icons a {
+    margin-left: 10px; 
+    text-decoration: none;
+    color:rgb(241, 237, 255);
+    font-size: 24px;
+  }
+  
+  .social-icons a:hover {
+    color: #007BFF; 
+  }
+  /*----------------------------------------------------------------FOOTER----------------------------------------------------------------*/
+  
+  /* Media Queries */
+  @media only screen and (max-width: 768px) {
+    body {
+      grid-template-rows:
+        "header"
+        "main"
+        "main"
+        "footer";
+    }
+  
+    main {
+      width: 80%;
+    }
+
+  }
+  
+  @media only screen and (max-width: 480px) {
+    body {
+      grid-template-rows:
+        "header"
+        "main"
+        "main"
+        "footer";
+    }
+  
+    main {
+      width: 100%;
+    }
+  
+  }

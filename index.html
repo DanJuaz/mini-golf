@@ -4,11 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini-Golf</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div>
-        <canvas id= "canvas" width="400" height="400" style="border:1px solid #000000;">Your browser does not support the HTML5 canvas tag.</canvas><br>        
-        <canvas id= "canvas2" width="400" height="140" style="border:0px solid #000000;">Your browser does not support the HTML5 canvas tag.</canvas> <br>  
-    </div>
+    <header>
+        <div class="nav">
+            <div class="logo">
+                <span class="material-symbols-outlined">
+                playing_cards
+                </span></div>
+            <div class="ranking">
+                <div class="global">
+                    <span class="material-symbols-outlined">
+                    military_tech
+                    </span>
+                    <p>Me</p>
+                </div>
+                <div class="local">
+                    <span class="material-symbols-outlined">
+                        public
+                    </span>
+                    <p>Global</p>
+                </div>
+            </div>
+            <div class="user">
+                <span class="material-symbols-outlined">
+                    person 
+                    </span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- <div id="start-screen">
+            <h1>Let´s Play</h1>
+            <div class="icon">
+                <button class="replayButton" onclick="startGame()">
+                    <span id="playButtonIcon" class="material-symbols-outlined">
+                        play_circle
+                    </span>
+                </button>
+            </div>
+        </div> -->
+        <!-- <div id="content-container" style="display: none;"> -->
+            <div>
+                <canvas id= "canvas" width="400" height="400" style="border:1px solid #000000;">Your browser does not support the HTML5 canvas tag.</canvas><br>        
+                <canvas id= "canvas2" width="400" height="140" style="border:0px solid #000000;">Your browser does not support the HTML5 canvas tag.</canvas> <br>  
+            </div>
+        <!-- </div> -->
+        <!-- <div id="end-screen" style="display: none;">
+           
+            Audio
+            <audio id="winSound">
+                <source src="./assets/audio/victory.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="loseSound">
+                <source src="./assets/audio/lose.mp3" type="audio/mp4">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="win-short">
+                <source src="./assets/audio/win-short.mp3" type="audio/mp4">
+                Your browser does not support the audio element.
+            </audio>
+              
+        </div> -->
+    </main>
+    <footer>
+        <div>Julio &#169; 2023</div>
+        <div class="social-icons">
+            <a target="_blank" href="https://www.linkedin.com/in/julio-daniel-azurduy-montalvo-70aba5244" class="fa fa-linkedin"> </a>
+            <a target="_blank" href="https://github.com/DanJuaz/GameCards" class="fa fa-github"> </a>
+        </div>
+      </footer>
+    <script src="./script.js"></script>
+    
 </body>
 </html>
