@@ -26,9 +26,9 @@
     var rectangleY = canvas2.height * 20;
 
     var starPositions = [
-        { x: canvas.width / 20, y: canvas.height / 10 },
-        { x: canvas.width / 3, y: canvas.height / 7 }, 
-        { x: canvas.width * 19 / 20, y: canvas.height / 2 } 
+        { x: canvas.width / random(), y: canvas.height / 10 },
+        { x: canvas.width / random(), y: canvas.height / 7 }, 
+        { x: canvas.width * random() / random(), y: canvas.height / 2 } 
     ];
 
     //Start
@@ -125,16 +125,13 @@
         }
         // Check for collisions with stars
         for (var i = 0; i < starPositions.length; i++) {
-        var starX = starPositions[i].x;
-        var starY = starPositions[i].y;
-        var distance = Math.sqrt((centerX - starX) ** 2 + (centerY - starY) ** 2);
-        if (distance < radius + 25) {
-            // Collision detected with a star, increase the score
-            score++;
-            // Remove the star that was hit
-            starPositions.splice(i, 1);
-            // You can add more stars if you want here
-            }
+            var starX = starPositions[i].x;
+            var starY = starPositions[i].y;
+            var distance = Math.sqrt((centerX - starX) ** 2 + (centerY - starY) ** 2);
+            if (distance < radius + 25) {
+                score++;
+                starPositions.splice(i, 1);
+                }
         }
         // Rectangle boundaries
         if (rectangleX < limitLeft){
