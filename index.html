@@ -37,28 +37,38 @@
         </div>
     </header>
     <main>
-            <div>
-                <canvas id= "canvas" width="800" height="600" style="border:1px solid #000000;">Your browser does not support the HTML5 canvas tag.</canvas><br>        
-                <canvas id= "canvas2" width="300" src="assets/img/moneda.png" height="25" style="border:0px solid #000000;">Your browser does not support the HTML5 canvas tag.</canvas> <br>  
+        <div id="container">
+            <canvas id= "canvas" width="800" height="600" style="border:1px solid #000000;">Your browser does not support the HTML5 canvas tag.</canvas><br>        
+            <canvas id= "canvas2" width="300" src="assets/img/moneda.png" height="25" style="border:0px solid #000000;">Your browser does not support the HTML5 canvas tag.</canvas> <br>  
+        </div>
+        <div id="end-screen" style="display: none;">
+            <div class="end-puntutation">
+                <h1>Score:</h1>
+                <span id="score">100</span>
             </div>
-        <!-- </div> -->
-        <!-- <div id="end-screen" style="display: none;">
-           
-            Audio
-            <audio id="winSound">
-                <source src="./assets/audio/victory.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-            <audio id="loseSound">
-                <source src="./assets/audio/lose.mp3" type="audio/mp4">
-                Your browser does not support the audio element.
-            </audio>
-            <audio id="win-short">
-                <source src="./assets/audio/win-short.mp3" type="audio/mp4">
-                Your browser does not support the audio element.
-            </audio>
-              
-        </div> -->
+            <div class="replay">
+                <h3>REPLAY:</h3>
+                <div class="icon">
+                    <button class="replayButton" onclick="start()">
+                        <span id="playButtonIcon" class="material-symbols-outlined">
+                            replay
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="game-over" style="display: none;">
+            <div class="replay">
+                <h2>GAME OVER :</h2>
+                <div class="icon">
+                    <button class="replayButton" onclick="start()">
+                        <span id="playButtonIcon" class="material-symbols-outlined">
+                            replay
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>   
     </main>
     <footer>
         <div>Julio &#169; 2023</div>

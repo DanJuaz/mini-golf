@@ -1,11 +1,15 @@
+
     //Get the both Canvas
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');
     var canvas2 = document.getElementById('canvas2');
     var contex2 = canvas2.getContext('2d');
-    
+    //Get end-screen
+    var endScreen = document.getElementById('end-screen');
+    var gameOver = document.getElementById('game-over'); 
     // Score
     var score = 0;
+    var confetti = [];
     //Boundary
     var limitTop = 0;
     var limitBottom = canvas.height ;
@@ -99,6 +103,32 @@
         context.fill();
         context.stroke();
     }
+    // Function to create confetti particles
+    function createConfetti() {
+        for (let i = 0; i < 100; i++) {
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * canvas.height;
+            const color = `rgb(${Math.random() * 256}, ${Math.random() * 256}, ${Math.random() * 256})`;
+            const angle = Math.random() * Math.PI * 2;
+            const speed = 2 + Math.random() * 2;
+            confetti.push({ x, y, color, angle, speed });
+        }
+    }
+
+    // Function to draw and animate confetti
+    function drawConfetti() {
+        for (let i = 0; i < confetti.length; i++) {
+            const particle = confetti[i];
+            context.beginPath();
+            context.arc(particle.x, particle.y, 3, 0, Math.PI * 2);
+            context.fillStyle = particle.color;
+            context.fill();
+            context.closePath();
+
+            particle.x += Math.cos(particle.angle) * particle.speed;
+            particle.y += Math.sin(particle.angle) * particle.speed;
+        }
+    }
     //Get math random
     function random() {
         return Math.random() * (20 -1.1) + 1.1;
@@ -113,7 +143,7 @@
         }
         //Ball bottm bundary and LOSE
         if(centerY + velY > limitBottom){
-            window.alert(":C, Te rendirás!!");
+            
         }
         // Rectangle with ball boundaries
         if(centerY + radius > rectangleY &&
@@ -141,7 +171,13 @@
         }
         centerX += velX;
         centerY += velY;
+        if (starPositions.length === 0) {
+            createConfetti();
+        }
         draw();
+        if (starPositions.length === 0) {
+            drawConfetti();
+        }
         requestAnimationFrame(moveBall);
     }
     // Movement with A/S && Left/Right
