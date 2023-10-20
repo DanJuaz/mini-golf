@@ -28,16 +28,18 @@
     //Start
     function start(){
         draw();
+        //drawStar();
         update();
         document.addEventListener('keydown',keydown);
     }
     //Draw
     function draw(){
+        
         context.clearRect(0, 0, canvas.width, canvas.height);   
         drawBall();
         drawRectangle();
         drawScore();
-        drawMoney();
+        drawStar();
     }
     // Draw ball
     function drawBall(){
@@ -59,28 +61,15 @@
         context.font= "16px Arial";
         context.fillText("Score: "+ score, 8, 20);
     }
-    // Draw the img Money
-    function drawMoney(){
-        // var widthImg = 100;
-        // var heightImg = 100;
-    
-        // var img = new Image();
-        // img.src = "./assets/img/moneda.png";
-    
-        // img.onload = function() {
-        //     context.drawImage(img, 80, 20, widthImg, heightImg);
-        // };
-        // Define the coordinates for the star points
-        var x = canvas.width / 2; // X-coordinate of the center
-        var y = canvas.height / 2; // Y-coordinate of the center
-        var radius = 50; // Radius of the outer circle
-        var innerRadius = 20; // Radius of the inner circle
+    // Draw the Star
+    function drawStar(){
+        var x = canvas.width / random();
+        var y = canvas.height/5; 
 
-        // Set the stroke and fill styles
-        context.strokeStyle = 'blue'; // Outline color
-        context.fillStyle = 'yellow'; // Fill color
-
-        // Begin drawing the star
+        var radius = 25; 
+        var innerRadius = 10; 
+        context.strokeStyle = 'black'; 
+        context.fillStyle = 'yellow'; 
         context.beginPath();
 
         // Move to the starting point
@@ -100,24 +89,19 @@
             
             // Calculate the angle for the inner point
             angle += ((Math.PI * 2) / 5) / 2;
-            
-            // Calculate the coordinates for the inner point
+
             var innerX = x + Math.cos(angle) * innerRadius;
             var innerY = y + Math.sin(angle) * innerRadius;
-            
-            // Draw a line to the inner point
             context.lineTo(innerX, innerY);
         }
-
-        // Close the path to complete the star shape
         context.closePath();
-
-        // Fill the star with the fill color
         context.fill();
-
-        // Draw the outline of the star
         context.stroke();
 
+    }
+    //Get math random
+    function random() {
+        return Math.random() * (20 -1.1) + 1.1;
     }
     function update(){
         // Ball boundaries with canvas boundaries
