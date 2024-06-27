@@ -38,9 +38,12 @@
     //Start
     function start(){
         draw();
-        //drawStar();
         moveBall();
         document.addEventListener('keydown',keydown);
+        if(score === 3){
+            endScreen.style.display = 'block';
+            gameOver.innerHTML = 'You Win!';
+        }
     }
     //Draw
     function draw(){
@@ -171,6 +174,9 @@
         }
         centerX += velX;
         centerY += velY;
+
+
+
         if (starPositions.length === 0) {
             createConfetti();
         }

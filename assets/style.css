@@ -14,6 +14,8 @@
       "header"
       "main"
       "footer";
+      /* Disabled scroll x */
+    overflow-x: hidden;
   }
   /*----------------------------------------------------------------HEADER----------------------------------------------------------------*/
   header {
@@ -56,11 +58,10 @@
   /*----------------------------------------------------------------HEADER----------------------------------------------------------------*/
   /*----------------------------------------------------------------MAIN----------------------------------------------------------------*/
   main {
-    grid-row: "main";
     display: flex;
     flex-direction: column;
-    width: 63%;
-    height: 81.25vh;
+    justify-content: center;
+    width: auto;
     margin: auto;
     margin-top: 10px;
     color: white;
@@ -72,9 +73,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   width: 100%;
-  height: 100vh;
   margin-top: 0px;
   padding: 0;
   color: grey;
@@ -82,6 +81,9 @@
   /*----------------------------------------------------------------MAIN----------------------------------------------------------------*/
   /*----------------------------------------------------------------FOOTER----------------------------------------------------------------*/
   footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -108,7 +110,6 @@
     body {
       grid-template-rows:
         "header"
-        "main"
         "main"
         "footer";
     }
